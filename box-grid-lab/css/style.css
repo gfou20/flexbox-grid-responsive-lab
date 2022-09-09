@@ -1,0 +1,141 @@
+html {
+  box-sizing: border-box
+}
+
+/* The Universal Selector */
+*, /* All elements*/
+*::before, /* All ::before pseudo-elements */
+*::after { /* All ::after pseudo-elements */
+  /* height & width will now include border & padding by default
+     but can be over-ridden as needed */
+  box-sizing: inherit;
+}
+
+body {
+  background-color: gray;
+/* Use a system font, if none are available use an available sans-sarif   font */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  height: 400px;
+  width: 250px;
+  background-color: white;
+  text-align: center;
+}
+
+#status {
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px 8px 0 0;
+}
+
+#img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 125px;
+}
+
+img {
+  border-radius: 50%;
+  border: 3px solid green;
+}
+
+h1 {
+  font-size: 22px;
+}
+
+#occupation {
+  background-color: lightgray;
+  padding: 4px 0;
+}
+
+#brand {
+  display: none;
+}
+
+p {
+  margin: 4px 0;
+}
+
+#occupation,
+#offer {
+  padding: 4px 0;
+}
+
+#contact {
+  display: flex;
+}
+
+#contact > p {
+  height: 60px;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#contact > p:first-child {
+  background-color: lime;
+}
+
+#contact > p:last-child {
+  background-color: green;
+}
+
+@media only screen and (min-width: 768px) {
+  main {
+    width: 500px;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+    "status name"
+    "img occupation"
+    "img brand"
+    "contact offer";
+  } 
+
+    #status {
+    display: flex;
+    align-items: flex-start; 
+  }
+  /* #status {
+    text-align: left;
+    justify-content: flex-start;
+    align-items: flex-start;
+  } */
+
+  img {
+    grid-area: img;
+    margin: 20px auto;
+  }
+
+  /* #offer {
+    justify-content: flex-end;;
+  }
+  #left {
+    position: absolute;
+    width: 150px;
+  } */
+  #contact > p {
+    grid-area: contact;
+    margin-top: 10px;
+    /* position: relative;
+    right: 289px;
+    top: 120px;
+    width: 70px; */
+  }
+}
+
