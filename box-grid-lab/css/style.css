@@ -93,25 +93,62 @@ p {
 @media only screen and (min-width: 768px) {
   main {
     width: 500px;
-    height: 300px;
+    height: auto;
     display: grid;
+    text-align: start;
     grid-template-columns: 40% 60%;
-    grid-template-rows: auto auto auto auto;
     grid-template-areas:
     "status name"
     "img occupation"
     "img brand"
-    "contact offer";
+    "contact offer"
   } 
 
   img {
     grid-area: img;
     margin: 20px auto;
   }
+
+  #status {
+    justify-content: flex-start;
+    padding-left: 20px;
+    grid-area: status;
+  }
+
+  #offer {
+    grid-area: offer;
+    display:flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding-bottom: 20px;
+    flex-direction: column;
+  }
   
   #offer,
-    #name {
+  #name, #brand {
     background-color: lightgray;
+    padding-left: 20px;
+  }
+
+  #name {
+    margin: 0;
+    padding-top: 20px;
+  }
+
+  #brand {
+    display: unset;
+    grid-area: brand;
+  }
+  #occupation{
+    grid-area: occupation;
+    padding-left: 20px;
+  }
+  #contact {
+    grid-area: contact;
+    padding-top: 70px;
+  }
+  #contact p {
+    margin: 0;
   }
 }
 /* struggled to move offer and add background-color to the bottom */
