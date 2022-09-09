@@ -94,9 +94,6 @@ p {
   main {
     width: 500px;
     height: 300px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
     display: grid;
     grid-template-columns: 40% 60%;
     grid-template-rows: auto auto auto auto;
@@ -107,35 +104,14 @@ p {
     "contact offer";
   } 
 
-    #status {
-    display: flex;
-    align-items: flex-start; 
-  }
-  /* #status {
-    text-align: left;
-    justify-content: flex-start;
-    align-items: flex-start;
-  } */
-
   img {
     grid-area: img;
     margin: 20px auto;
   }
-
-  /* #offer {
-    justify-content: flex-end;;
-  }
-  #left {
-    position: absolute;
-    width: 150px;
-  } */
-  #contact > p {
-    grid-area: contact;
-    margin-top: 10px;
-    /* position: relative;
-    right: 289px;
-    top: 120px;
-    width: 70px; */
+  
+  #offer,
+    #name {
+    background-color: lightgray;
   }
 }
 
